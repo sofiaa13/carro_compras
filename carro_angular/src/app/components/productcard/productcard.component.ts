@@ -21,6 +21,5 @@ export class ProductcardComponent implements OnInit {
   this.carritoservicio.addProductToCart(malumaproduct);
   }
 
-
   }
 

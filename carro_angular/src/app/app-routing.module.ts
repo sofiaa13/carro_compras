@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { catchError } from 'rxjs';
 import { CartComponent } from './cart/cart.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductcardComponent } from './components/productcard/productcard.component';
-import { ShoppingcardlistComponent } from './components/shoppingcardlist/shoppingcardlist.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PaypageComponent } from './paypage/paypage.component';
 import { RegisterComponent } from './register/register.component';
-import { CarroGuard } from './services/carro.guard';
+
 
 const routes: Routes = [
   {
@@ -32,13 +31,19 @@ const routes: Routes = [
   {
     path:'payment', component: PaypageComponent
   },
+
+  {
+    path:'product-details/:id',component:ProductDetailsComponent
+  },
+
   {
     path: 'notFound', loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule),
   },
   {
     path: '**', loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
 
-  }
+  },
+  
 ];
 
 @NgModule({

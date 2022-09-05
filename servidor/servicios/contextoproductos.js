@@ -18,6 +18,25 @@ async function getAllProducts(page = 1){
 }
 
 
+async function getById(id_producto){
+  page = 1;
+  const offset = helper.getOffset(page, config.listPerPage);
+  const rows = await db.query(
+    `SELECT   *
+    FROM  products
+    WHERE products.id=${1}`
+  
+    );
+    console.log(rows);
+  const data = helper.emptyOrRows(rows);
+  const meta = {page};
+
+  return {
+    data,
+    meta
+  }
+}
+
 
 async function getProductsByName(name){
   page = 1;
@@ -90,7 +109,7 @@ async function create(producto){
 
 
 module.exports = {
-  getMultiple: getAllProducts, getProductsByName,
+  getMultiple: getAllProducts, getProductsByName,getById,
   create,
   update,
   remove

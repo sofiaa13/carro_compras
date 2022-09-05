@@ -47,6 +47,7 @@ import { CarroGuard } from './services/carro.guard';
 import { CartComponent } from './cart/cart.component';
 import {NumberpickerComponent} from './components/numberpicker/numberpicker.component';
 import { CartnotificationiconComponent } from './components/cartnotificationicon/cartnotificationicon.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { CartnotificationiconComponent } from './components/cartnotificationicon
     PaypageComponent,
     CartComponent,
     NumberpickerComponent,
-    CartnotificationiconComponent
+    CartnotificationiconComponent,
+    ProductDetailsComponent
    ],
   imports: [
     BrowserModule,

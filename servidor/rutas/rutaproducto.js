@@ -13,6 +13,17 @@ router.get('/', async function(req, res, next) {
 });
 
 
+router.get('/getbyid/:id', async function(req, res, next) {
+  try {  
+    console.log(req.query.id);    
+  
+    res.json(await productos.getById(req.query.id));
+  } catch (err) {
+    console.error(err.message);
+    next(err);
+  }
+});
+
 /* GET Productos By Name*/
 router.get('/ProductsByName', async function(req, res, next) {
   try {      

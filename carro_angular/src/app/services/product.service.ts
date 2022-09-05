@@ -5,6 +5,9 @@ import { Producto } from '../models/productmodel';
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
+  getProductsById(arg0: number) {
+    throw new Error('Method not implemented.');
+  }
   apiUrl: string;
   constructor(private http: HttpClient) {
     this.apiUrl = environment.apiUrl;
@@ -22,7 +25,11 @@ export class ProductService {
 
 
   getById(id: number) {
-    return this.http.get<Producto>(`${this.apiUrl}/productos/${id}`);
+
+   console.log("llame al producto");
+const productmaluma= this.http.get<Producto>(`${this.apiUrl}/productos/getById/${id}`);
+console.log(productmaluma);
+    return productmaluma;
   }
 
   create(prod: Producto) {

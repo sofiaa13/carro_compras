@@ -3,7 +3,7 @@
     <div class="row">
         <ng-container >
             <div class="card col-md-3 cuadro" >
-                <img class="sofiaimagen"  src="{{producto.img}}" alt="">
+                <img class="sofiaimagen"  routerLink="/product-details/:id" src="{{producto.img}}" alt="">
                 <h3 style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;text-align: center;">
                     {{producto.name}}</h3>
                 <h4 style="white-space:nowrap;overflow:hidden;text-overflow: ellipsis;max-width: 100ch;text-align: center;">
